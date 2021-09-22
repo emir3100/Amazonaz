@@ -46,9 +46,10 @@ Products endpoints:
 * Get All Products
 * Get Product with id
 * Create Product
-* Order Product
+
 
 Orders endpoints:
 * Get Order with id
 * Get all Order
 * Get all User Orders with userId
+* Order Product
