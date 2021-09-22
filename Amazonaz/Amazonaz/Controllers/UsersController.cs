@@ -3,7 +3,7 @@ using Amazonaz.Server.Data;
 using Amazonaz.Server.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Amazonaz.Server.Controllers;
 [Route("api/[controller]")]
@@ -15,6 +15,12 @@ public class UsersController : ControllerBase
     public UsersController(ApplicationDbContext applicationDbConext)
     {
         this._applicationDbConext = applicationDbConext;
+    }
+
+    [HttpGet]
+    public async Task<IEnumerable<UserModel>> GetAllUsers()
+    {
+        return await _applicationDbConext.Users.ToArrayAsync();
     }
 
     [HttpGet("{id}")]
@@ -36,7 +42,7 @@ public class UsersController : ControllerBase
         _applicationDbConext.Add(user);
         await _applicationDbConext.SaveChangesAsync();
 
-        return Created("api/users/", user.Id);
+        return Created($"api/users/{user.Id}", user);
 
     }
 }

@@ -16,3 +16,9 @@ public class ProductsController : ControllerBase
 }
 
 
+//Products endpoints:
+
+//Get All Products
+//Get Product with id
+//Create Product
+//Buy Product
