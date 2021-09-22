@@ -38,3 +38,16 @@ Entities:
 | | CreationDate | DateTime2 | NOT NULL |
 | FK | CreatedById | Guid | NOT NULL |
 
+Users endpoints:
+* Get User with id
+* Create User
+
+Products endpoints:
+* Get All Products
+* Get Product with id
+* Create Product
+* Buy Product
+
+Orders endpoints:
+* Get all Order
+* Get all User Orders with userId
