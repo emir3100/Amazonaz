@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Amazonaz.Server.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amazonaz.Server.Controllers;
@@ -6,4 +7,12 @@ namespace Amazonaz.Server.Controllers;
 [ApiController]
 public class ProductsController : ControllerBase
 {
+    private readonly ApplicationDbContext _applicationDbConext;
+
+    public ProductsController(ApplicationDbContext applicationDbConext)
+    {
+        this._applicationDbConext = applicationDbConext;
+    }
 }
+
+
